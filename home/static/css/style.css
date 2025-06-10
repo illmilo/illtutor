@@ -1,0 +1,79 @@
+/* common settings */
+body {
+    margin:0;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+a {
+    color: blue;
+}
+a:visited {
+    color:yellow;
+}
+
+/* footer & header */
+ul.social, nav ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+    display:flex;
+}
+
+/* footer */
+img.social {
+width:30px;
+    padding:5px;
+}
+ul.social {
+    flex-direction: column;
+}
+ul.social li {
+    /* align vertically to the level of the images */
+    display:flex;
+    align-items: center;
+}
+
+/* header */
+header {
+    background-color: rgb(35, 33, 28);
+    padding: 0%;
+    position:relative; /* for absolute elements inside */
+    padding:20px;
+}
+nav ul {
+    flex-direction: row;
+    margin-left: 30px;
+    width: 200px;
+    justify-content: space-between;
+}
+nav ul li {
+    flex-grow:1;
+    text-align: center;
+}
+nav ul li a {
+    text-decoration: none;
+}
+a#login {
+    position:absolute;
+    right:30px;
+    top:50%;
+    transform: translateY(-50%);
+}
+img#siteLogo {
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform: translateY(-50%);
+    width:30px;
+}
+/* button#themeToggle {
+    position:absolute;
+    left:0;
+    top:0;
+    background-color: transparent;
+    border: none;
+    width:30px;
+    height:30px;
+}
+button#themeToggle, button#themeToggle img {
+    width:30px;
+} */
