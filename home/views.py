@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
+from .models import About
+
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
-# def about(request):
-#     return render(request, 'about.html')
+    about = About.objects.all()
+    return render(request, 'home/home.html', {'about': about})
+def tutors(request):
+    return render(request, 'home/tutors.html')

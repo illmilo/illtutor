@@ -1,0 +1,29 @@
+/* Table of contents */
+div#tableOfContents {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    margin: 1rem;
+    height:100vh;
+}
+
+div#tableOfContents ul {
+    display: flex;
+    flex-direction: column;
+    height:70px;
+    align-items: center;
+    justify-content: space-around;
+    margin:auto;
+    transform: translateY(-50%);
+    list-style:none;
+    padding:10px;
+    background-color: rgb(35, 33, 28);
+}
+
+div#tableOfContents ul li a {
+    font-size:1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    color:antiquewhite;
+}

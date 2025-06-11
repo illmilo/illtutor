@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block styles %}<link href="{% static 'home/css/home.css' %}" rel="stylesheet">{% endblock %}
+{% block title %}Главная | illtutor{% endblock %}
+{% block content %}
+    <div id="tableOfContents">
+        <ul>
+            <li><a href="#about">Что такое illtutor?</a></li>
+            <li><a href="#courses">Каталог курсов</a></li>
+        </ul>
+    </div>
+    <div id="about">
+        {{ about.text }}
+        {% for guarantee in about.guarantees %}
+        <ul>
+            <li>{{ guarantee.text }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    <iframe src="{% url 'courses' %}" id="courses" name="courses"></iframe>
+{% endblock %}
