@@ -17,15 +17,13 @@
 <body>
     <header>
         <img id="siteLogo" src="{% static 'home/images/logo/illtutor.png' %}">
-        <!-- <button id="themeToggle" onclick="toggleTheme()"><img src="{% static 'images/button/themeToggle.png' %}"></button> -->
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Главная</a></li>
                 <li><a href="{% url 'courses' %}">Курсы</a></li>
                 <li><a href="{% url 'tutors' %}">Преподаватели</a></li>
-                <li><a href="{% url 'home' %}#about">О нас</a></li>
             </ul>
-            <!-- <a href="{ url 'login' %}" id="login">Личный кабинет</a> -->
+            <a href="{ url 'login' %}" id="login">Личный кабинет</a>
         </nav>
     </header>
     <main>{% block content %}{% endblock %}</main>

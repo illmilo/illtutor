@@ -1,2 +1,16 @@
-{% extends 'courses/base.html' %}
+{% extends 'home/base.html' %}
+{% load static %}
+{% block styles %}<link href="{% static 'courses/css/style.css' %}" rel="stylesheet">{% endblock %}
 {% block title %}Каталог курсов | illtutor{% endblock %}
+{% block content %} 
+    {% for course in courses %}
+        <div class="grid-table-item" style="background-image: url('../static/courses/{{ course.image }}');">
+            <h2>{{ course.name }}</h2>
+            <p>{{ course.description }}</p>
+            <div class="flex-table-item__price">
+                <h3>Цена</h3>
+                <span>{{ course.price }}</span>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+div.grid-table-item {
+    color:antiquewhite;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    min-width: 50vw;
+    min-height:50vh;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}

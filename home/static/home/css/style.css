@@ -1,7 +1,13 @@
+:root {
+    --color1: rgb(50, 50, 50);
+    --color2: rgb(62, 62, 67);
+    background-color: var(--color2);
+}
 /* common settings */
 body {
     margin:0;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    background-color: var(--color1);
 }
 a {
     color: blue;
@@ -12,7 +18,7 @@ a:visited {
 
 /* footer & header */
 header, footer {
-    background-color: rgb(35, 33, 28);
+    background-color: var(--color2);
     position:relative; /* for absolute elements inside */
     padding:20px;
 }
