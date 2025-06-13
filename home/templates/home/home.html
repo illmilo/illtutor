@@ -1,20 +1,63 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% block styles %}<link href="{% static 'home/css/home.css' %}" rel="stylesheet">{% endblock %}
+
+{% block styles %}
+<link href="{% static 'home/css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block title %}Главная | illtutor{% endblock %}
+
 {% block content %}
-    <div id="tableOfContents">
-        <ul>
-            <li><a href="#about">Что такое illtutor?</a></li>
-            <li><a href="#courses">Каталог курсов</a></li>
-        </ul>
+<div class="hero">
+    <h1>illtutor</h1>
+    <h2>Курсы по программированию для школьников 2-11 классов</h2>
+</div>
+
+<h3 class="section-title">Чем мы отличаемся от онлайн-школ?</h3>
+
+<h4 class="section-title">Цены и услуги</h4>
+<div class="features-grid">
+    <div class="feature-card">
+        <h5>Прозрачность</h5>
+        <p>Не скрываем цены на <a href="{% url 'courses' %}">курсы</a> и показываем, как распределяются ваши деньги</p>
     </div>
-    <div id="about">
-        {{ about.text }}
-        {% for guarantee in about.guarantees %}
-        <ul>
-            <li>{{ guarantee.text }}</li>
-        </ul>
-        {% endfor %}
+    
+    <div class="feature-card">
+        <h5>Программирование? Автоматизация!</h5>
+        <p>Хотим, чтобы вы платили меньше, поэтому используем то, что преподаем, для минимизации ручного труда</p>
     </div>
+    
+    <div class="feature-card">
+        <h5>Клиентоориентированность</h5>
+        <p>Нам важен каждый клиент и каждый отзыв, поэтому мы работаем на совесть и качество, а не корпоративные цели</p>
+    </div>
+</div>
+
+<h4 class="section-title">Структура</h4>
+<div class="features-grid">
+    <div class="feature-card">
+        <h5>Практическая ориентированность</h5>
+        <p>Все материалы написаны разработчиками с реальным опытом в программировании. 
+            Невозможно научиться программировать, если не практиковаться в реалистичных
+            задачах</p>
+    </div>
+    
+    <div class="feature-card">
+        <h5>Искуственный интеллект</h5>
+        <p>Поможет вашему ребенку обучиться быстрее и эффективнее</p>
+    </div>
+    
+    <div class="feature-card">
+        <h5>Индивидуальный подход</h5>
+        <p>Методические материалы разбиты на три уровня подготовки, чтобы ваш ребенок получил на курсе ровно столько, сколько ему нужно</p>
+    </div>
+</div>
+
+<div class="cta">
+    <h1>Заинтересовали?</h1>
+    <div class="cta-links">
+        <a href="{% url 'courses' %}" class="cta-link">Посмотрите наши курсы</a>
+        <a href="{% url 'tutors' %}" class="cta-link">Познакомьтесь с преподавателями</a>
+    </div>
+</div>
 {% endblock %}

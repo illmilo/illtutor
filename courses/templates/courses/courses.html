@@ -1,16 +1,47 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% block styles %}<link href="{% static 'courses/css/style.css' %}" rel="stylesheet">{% endblock %}
+{% block styles %}
+<link href="{% static 'courses/css/style.css' %}" rel="stylesheet">
+{% endblock %}
 {% block title %}Каталог курсов | illtutor{% endblock %}
-{% block content %} 
-    {% for course in courses %}
-        <div class="grid-table-item" style="background-image: url('../static/courses/{{ course.image }}');">
-            <h2>{{ course.name }}</h2>
-            <p>{{ course.description }}</p>
-            <div class="flex-table-item__price">
-                <h3>Цена</h3>
-                <span>{{ course.price }}</span>
+
+{% block content %}
+<div class="courses-container">
+    <h1 class="courses-title">Каталог курсов</h1>
+    <div class="courses-grid">
+        {% for course in courses %}
+        <div class="course-card">
+            <div class="course-image" style="background-image: url('{% static 'courses/' %}{{ course.image }}');">
+                <div class="course-overlay"></div>
+            </div>
+            <div class="course-content">
+                <h2 class="course-name">{{ course.name }}</h2>
+                <p class="course-description">{{ course.description }}</p>
+                <div class="course-price">
+                    <span class="price-label">Цена:</span>
+                    <span class="price-value">{{ course.price }} ₽</span>
+                </div>
+                <a href="#" class="course-button">Подробнее</a>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+        
+        <!-- Coming soon placeholder -->
+        <div class="course-card coming-soon">
+            <div class="course-image coming-soon-image">
+                <div class="course-overlay"></div>
+                <span>Скоро</span>
+            </div>
+            <div class="course-content">
+                <h2 class="course-name">Новый курс в разработке</h2>
+                <p class="course-description">Следите за обновлениями!</p>
+                <div class="course-price">
+                    <span class="price-label">Цена:</span>
+                    <span class="price-value">—</span>
+                </div>
+                <a href="#" class="course-button disabled">Скоро</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

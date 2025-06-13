@@ -4,14 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="{% static 'home/css/style.css' %}" rel="stylesheet">
     {% block styles %}{% endblock %}
-
     <link href="{% static 'home/images/logo/illtutor.png' %}" rel="icon">
     <link href="{% static 'home/images/logo/illtutor.png' %}" rel="favicon">
     {% block icons %}{% endblock %}
-
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -23,19 +20,23 @@
                 <li><a href="{% url 'courses' %}">Курсы</a></li>
                 <li><a href="{% url 'tutors' %}">Преподаватели</a></li>
             </ul>
-            <a href="{ url 'login' %}" id="login">Личный кабинет</a>
+            <a href="{% url 'login' %}" id="login">Личный кабинет</a>
         </nav>
     </header>
     <main>{% block content %}{% endblock %}</main>
     <footer>
-        <p>&copy; 2025, illmilo (Милена Кузнецова). Все права защищены.</p>
-        <a href="#">Политика конфиденциальности</a>
-        <p>При использовании материалов ссылка на сайт обязательна.</p>
-        <span>Обратная связь:</span>
-        <ul class="social">
-            <li><img class="social" src="{% static 'home/images/social/gmail.png' %}"><a href="mailto:illfqm@gmail.com">illfqm@gmail.com</a></li>
-            <li><img class="social" src="{% static 'home/images/social/telegram.svg' %}"><a href="https://t.me/illmilo">@illmilo</a></li>
-        </ul>
+        <div id="copyright">
+            <p>&copy; 2025, illmilo (Милена Кузнецова). Все права защищены.</p>
+            <a href="#">Политика конфиденциальности</a>
+            <p>При использовании материалов ссылка на сайт обязательна.</p>
+        </div>
+        <div id="contact">
+            <p>Обратная связь:</p>
+            <ul class="social">
+                <li><img class="social" src="{% static 'home/images/social/gmail.png' %}"><a href="mailto:illfqm@gmail.com">illfqm@gmail.com</a></li>
+                <li><img class="social" src="{% static 'home/images/social/telegram.svg' %}"><a href="https://t.me/illmilo">@illmilo</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>

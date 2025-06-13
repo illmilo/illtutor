@@ -1,93 +1,153 @@
 :root {
     --color1: rgb(50, 50, 50);
     --color2: rgb(62, 62, 67);
-    background-color: var(--color2);
+    --header: rgb(30,30,33);
+    background-color: var(--header);
 }
-/* common settings */
-body {
-    margin:0;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-    background-color: var(--color1);
-}
+
 a {
-    color: blue;
-}
-a:visited {
-    color:yellow;
+    color:burlywood;
 }
 
-/* footer & header */
-header, footer {
-    background-color: var(--color2);
-    position:relative; /* for absolute elements inside */
-    padding:20px;
-}
-ul.social, nav ul {
-    list-style: none;
-    margin:0;
-    padding:0;
-    display:flex;
-}
-footer, footer a {
-    color:antiquewhite;
-}
-footer a:visited {
-    color:yellow;
-}
-
-/* footer */
-img.social {
-    width:20px;
-    padding:5px;
-}
-ul.social {
+body {
+    background-color: var(--color1);
+    margin: 0;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-}
-ul.social li {
-    /* align vertically to the level of the images */
-    display:flex;
-    align-items: center;
+    color: antiquewhite;
 }
 
-/* header */
+header {
+    background-color: var(--header);
+    padding: 25px 30px;
+    box-shadow: 0 0 15px 5px rgba(25,25,28,0.7);
+    position: relative;
+    z-index: 10;
+}
+
+#siteLogo {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 47px;
+    height: 47px;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#siteLogo:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
 nav ul {
-    flex-direction: row;
-    width:fit-content;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
     margin-left: 50px;
-    gap:20px;
 }
-nav ul li {
-    flex-grow:1;
-    text-align: center;
-}
+
 nav ul li a {
-    color:antiquewhite;
-    font-size:1.2em;
-    font-weight: 700;
+    position: relative;
+    color: antiquewhite;
     text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 5px 0;
+    transition: all 0.3s ease;
 }
-a#login {
-    position:absolute;
-    right:30px;
-    top:50%;
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(200,200,0);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: rgb(200,200,0);
+}
+
+#login {
+    position: absolute;
+    right: 30px;
+    top: 50%;
     transform: translateY(-50%);
+    color: antiquewhite;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
-img#siteLogo {
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform: translateY(-50%);
-    width:40px;
+
+#login:hover {
+    color: rgb(200,200,0);
+    text-shadow: 0 0 5px rgba(200,200,0,0.5);
 }
-/* button#themeToggle {
-    position:absolute;
-    left:0;
-    top:0;
-    background-color: transparent;
-    border: none;
-    width:30px;
-    height:30px;
+
+main {
+    flex: 1;
+    padding: 30px;
+    background-color: rgba(25,25,28, 0.7);
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(25,25,28,0.5);
+    backdrop-filter: blur(5px);
 }
-button#themeToggle, button#themeToggle img {
-    width:30px;
-} */
+
+footer {
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--header);
+    padding: 20px;
+    box-shadow: 0 0 15px 5px rgba(25,25,28,0.7);
+}
+
+footer a, main a {
+    color: rgb(200,200,0);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover, main a:hover {
+    text-shadow: 0 0 5px rgba(200,200,0,0.5);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.social img {
+    width: 20px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.social img:hover {
+    filter: invert(0.8) sepia(1) saturate(5) hue-rotate(0deg);
+}
+
+#contact {
+    text-align:right;
+}

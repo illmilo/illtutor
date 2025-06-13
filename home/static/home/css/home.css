@@ -1,29 +1,208 @@
-/* Table of contents */
-div#tableOfContents {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
-    margin: 1rem;
-    height:100vh;
+:root {
+    --card-color: rgb(50, 50, 50);
+    --header-color: rgba(0,0,0,0.5);
 }
 
-div#tableOfContents ul {
+#tableOfContents {
     display: flex;
-    flex-direction: column;
-    height:70px;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    margin:auto;
-    transform: translateY(-50%);
-    list-style:none;
-    padding:10px;
-    background-color: rgb(35, 33, 28);
+    min-height: 50vh;
 }
 
-div#tableOfContents ul li a {
-    font-size:1.2em;
-    font-weight: 600;
+#tableOfContents ul {
+    list-style: none;
+    padding: 40px 60px;
+    background-color: rgba(35, 33, 28, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 20px 5px rgba(35, 33, 28, 0.5);
+    border-left: 3px solid antiquewhite;
+}
+
+#tableOfContents li {
+    margin: 20px 0;
+    position: relative;
+}
+
+#tableOfContents a {
+    position: relative;
+    display: inline-block;
+    color: antiquewhite;
     text-decoration: none;
-    color:antiquewhite;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+}
+
+#tableOfContents a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: rgb(200,200,0);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#tableOfContents a:hover {
+    color: rgb(200,200,0);
+    padding-left: 25px;
+}
+
+#tableOfContents a:hover::before {
+    opacity: 1;
+    left: 10px;
+}
+
+#about {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: rgba(35, 33, 28, 0.6);
+    border-radius: 15px;
+    line-height: 1.6;
+}
+
+#about ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#about li {
+    position: relative;
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+#about li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: rgb(200,200,0);
+}
+
+.hero {
+    background-image: url('../images/header.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: var(--header-color);
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, antiquewhite, rgb(200,200,0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    color: rgba(250, 235, 215, 0.8);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+h3.section-title {
+    font-size:2.2em;
+}
+h4.section-title {
+    font-size: 1.8em;
+}
+.section-title {
+    color: antiquewhite;
+    margin: 3rem 0 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: rgb(200,200,0);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: var(--card-color);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-left: 3px solid rgb(200,200,0);
+}
+
+.feature-card h5 {
+    font-size: 1.4rem;
+    color: rgb(200,200,0);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: rgba(250, 235, 215, 0.8);
+    line-height: 1.6;
+}
+
+.cta {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(35, 33, 28, 0.7);
+    border-radius: 15px;
+}
+
+.cta h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: antiquewhite;
+}
+
+.cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-link {
+    padding: 0.8rem 1.5rem;
+    background: rgba(200,200,0, 0.2);
+    color: rgb(200,200,0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(200,200,0, 0.3);
+}
+
+.cta-link:hover {
+    background: rgba(200,200,0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(200,200,0,0.2);
 }
